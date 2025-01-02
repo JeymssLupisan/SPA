@@ -1,5 +1,32 @@
 {% extends 'app/base.html' %}
 
-{% block content%}
-<h1>ABOUT PAGE</h1>
-{% endblock content%}
+{% block content %}
+<div class="about">
+    <div class="about-header">
+        <h1>About CENIT WELLNESS SPA</h1>
+        <p>At CENIT WELLNESS SPA, our mission is to provide a rejuvenating experience for all our clients. We believe in wellness, relaxation, and offering top-tier services that help you achieve total well-being.</p>
+    </div>
+
+    <div class="about-team">
+        <h2>Meet Our Team</h2>
+        <p>Our dedicated therapists are skilled professionals, passionate about delivering exceptional wellness experiences tailored to your needs.</p>
+    </div>
+
+    <div class="therapists">
+        <h2>Our Therapists</h2>
+        <div class="therapist-list">
+            {% for therapist in therapists %}
+                <div class="therapist-card">
+                    {% if therapist.image %}
+                        <img class="therapist-image" src="{{ therapist.image.url }}" alt="Image of {{ therapist.name }}">
+                    {% endif %}
+                    <h3>{{ therapist.name }}</h3>
+                    <p><strong>Specialty:</strong> {{ therapist.specialty }}</p>
+                    <p>{{ therapist.bio }}</p>
+                    <p><strong>Availability:</strong> {{ therapist.available|yesno:"Available,Unavailable" }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

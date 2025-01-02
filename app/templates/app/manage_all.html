@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage All - Cenit Wellness Spa</title>
+    <link rel="stylesheet" href="{% static 'css/manage_all.css' %}">
+
+</head>
+<body>
+    <h2>Manage All Records</h2>
+    <p>Use this page to add or update therapists, services, appointments, payments, customer profiles, and availability.</p>
+
+    <!-- Therapist Form -->
+    <h3>Add or Update Therapist</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ therapist_form.as_p }}
+        <button type="submit" name="action" value="therapist">Save Therapist</button>
+    </form>
+
+    <!-- Service Form -->
+    <h3>Add or Update Service</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ service_form.as_p }}
+        <button type="submit" name="action" value="service">Save Service</button>
+    </form>
+
+    <!-- Appointment Form -->
+    <h3>Book or Update Appointment</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ appointment_form.as_p }}
+        <button type="submit" name="action" value="appointment">Save Appointment</button>
+    </form>
+
+    <!-- Payment Form -->
+    <h3>Process or Update Payment</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ payment_form.as_p }}
+        <button type="submit" name="action" value="payment">Save Payment</button>
+    </form>
+
+    <!-- Customer Profile Form -->
+    <h3>Update Customer Profile</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ customer_profile_form.as_p }}
+        <button type="submit" name="action" value="customer_profile">Save Profile</button>
+    </form>
+
+    <!-- Availability Form -->
+    <h3>Manage Therapist Availability</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ availability_form.as_p }}
+        <button type="submit" name="action" value="availability">Save Availability</button>
+    </form>
+
+</body>
+</html>

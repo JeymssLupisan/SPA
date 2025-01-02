@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<div class="booking">
+    <h1>Book an Appointment</h1>
+    <form id="bookingForm" method="post" action="{% url 'confirm_booking' %}">
+        {% csrf_token %}
+        <label for="service">Select Service:</label>
+        <select name="service" id="service" required>
+            <option value="massage">Massage Therapy</option>
+            <option value="facial">Facial Treatment</option>
+            <option value="wellness">Wellness Package</option>
+        </select>
+
+        <label for="therapist">Select Therapist:</label>
+        <select name="therapist" id="therapist" required>
+            <option value="therapist_1">Therapist 1</option>
+            <option value="therapist_2">Therapist 2</option>
+        </select>
+
+        <label for="date">Choose Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit" class="button">Confirm Booking</button>
+    </form>
+</div>
+
+<div id="confirmationModal" style="display:none;">
+    <div class="modal-content">
+        <h2>Confirm Your Booking</h2>
+        <p>Are you sure you want to confirm this booking?</p>
+        <button id="confirmYes">Yes</button>
+        <button id="confirmNo">No</button>
+    </div>
+</div>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'app/css/booking.css' %}">
+<script src="{% static 'app/js/booking.js' %}" defer></script>
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="services">
+    <h1>Our Services</h1>
+    {% for service in services %}
+        <div class="service-item">
+            <h2>{{ service.name }}</h2>
+            <p>{{ service.description }}</p>
+            <p><strong>Duration:</strong> {{ service.duration }}</p>
+            <p><strong>Price:</strong> ${{ service.price }}</p>
+            {% if service.image %}
+                <img src="{{ service.image.url }}" alt="{{ service.name }}">
+            {% else %}
+                <p>No image available</p>
+            {% endif %}
+        </div>
+    {% empty %}
+        <p>No services available at the moment.</p>
+    {% endfor %}
+</div>
+
+<div class="therapists">
+    <h1>Meet Our Therapists</h1>
+    <div class="therapist-item">
+        <img src="{% static 'images/therapist1.jpg' %}" alt="Therapist 1">
+        <h2>Therapist Name 1</h2>
+        <p>Expert in relaxation massage and wellness therapies.</p>
+    </div>
+    <div class="therapist-item">
+        <img src="{% static 'images/therapist2.jpg' %}" alt="Therapist 2">
+        <h2>Therapist Name 2</h2>
+        <p>Specializes in deep tissue and therapeutic massage.</p>
+    </div>
+</div>
+{% endblock content %}

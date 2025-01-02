@@ -1,0 +1,39 @@
+.confirmation {
+    max-width: 600px; /* Limit the width of the confirmation section */
+    margin: 20px auto; /* Center it horizontally and add margin on top/bottom */
+    padding: 20px; /* Add padding for spacing */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.confirmation h1 {
+    color: #2c3e50; /* Dark blue for the heading */
+    font-size: 24px; /* Font size for the main heading */
+    text-align: center; /* Center the heading text */
+}
+
+.confirmation p {
+    color: #34495e; /* Darker gray for body text */
+    font-size: 16px; /* Font size for the body text */
+    line-height: 1.5; /* Improved readability with line height */
+}
+
+.confirmation ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0; /* Remove padding */
+}
+
+.confirmation ul li {
+    margin-bottom: 10px; /* Add space between list items */
+}
+
+.confirmation a {
+    color: #3498db; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.confirmation a:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}

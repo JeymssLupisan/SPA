@@ -1,0 +1,91 @@
+.services {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.services h1 {
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.service-item {
+    display: inline-block;
+    width: 300px;
+    margin: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.service-item h2 {
+    font-size: 1.8em;
+    color: #343a40;
+    margin: 10px 0;
+}
+
+.service-item p {
+    font-size: 1.1em;
+    color: #6c757d;
+}
+
+.therapists {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.therapists h1 {
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.therapist-item {
+    display: inline-block;
+    width: 300px;
+    margin: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s;
+}
+
+.therapist-item:hover {
+    transform: scale(1.05);
+}
+
+.therapist-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.therapist-item h2 {
+    font-size: 1.8em;
+    color: #343a40;
+    margin: 10px 0;
+}
+
+.therapist-item p {
+    font-size: 1.1em;
+    color: #6c757d;
+}

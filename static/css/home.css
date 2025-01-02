@@ -1,0 +1,76 @@
+.hero-section {
+    background: url('https://source.unsplash.com/1600x900/?spa') no-repeat center center/cover;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background: #d4a373;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #b88a64;
+}
+
+.btn:hover {
+    background: #a77a59;
+}
+
+.therapists, .services {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.therapist-list, .service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.therapist-card, .service-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.therapist-card img, .service-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.therapist-card h3, .service-card h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.cta {
+    text-align: center;
+    padding: 50px 20px;
+    background: #333;
+    color: #fff;
+}

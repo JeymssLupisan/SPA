@@ -1,0 +1,19 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h1>Complete Your Payment</h1>
+<form method="post" action="{% url 'process_payment' %}">
+    {% csrf_token %}
+    <p><strong>Amount:</strong> ${{ appointment.service.price }}</p>
+
+    <label for="payment_method">Payment Method:</label>
+    <select name="payment_method" id="payment_method">
+        <option value="credit_card">Credit Card</option>
+        <option value="e_wallet">E-Wallet</option>
+    </select>
+
+    <label for="transaction_id">Transaction ID:</label>
+    <input type="text" name="transaction_id" id="transaction_id" required>
+
+    <button type="submit" class="button" formaction="{% url 'process_payment' %}">Confirm Payment</button>
+</form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Booking Confirmation</h1>
+<p>Your appointment has been booked successfully!</p>
+<p>Service: {{ appointment.service.name }}</p>
+<p>Therapist: {{ appointment.therapist.name }}</p>
+<p>Date: {{ appointment.date }}</p>
+<p>Time: {{ appointment.time }}</p>
+
+<a href="{% url 'payment' %}">Proceed to Payment</a>
+{% endblock %}
