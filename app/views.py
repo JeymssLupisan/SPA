@@ -35,9 +35,9 @@ def login_view(request):
             user = authenticate(request, username=username, password=password)
 
             if user is not None:
-                login(request, user)  # Log the user in
+                login(request, user)  
                 messages.success(request, f"Welcome back, {user.username}!")
-                return redirect('home')  # Redirect to the home page after login
+                return redirect('home')  
             else:
                 messages.error(request, "Invalid username or password.")
         else:
@@ -53,13 +53,13 @@ def logout_view(request):
     return redirect('home')
 
 def home(request):
-    return render(request, 'app/home.html')  # Adjust path if needed
+    return render(request, 'app/home.html')  
 
 def about(request):
     return render(request, 'app/about.html')
 
 def services(request):
-    services_list = Service.objects.all()  # Fetch all services
+    services_list = Service.objects.all()  
     return render(request, 'app/services.html', {'services': services_list})
 
 def booking(request):
@@ -68,7 +68,7 @@ def booking(request):
         return redirect('login')
 
     therapists = Therapist.objects.filter(available=True)
-    services = Service.objects.all()  # Get all services
+    services = Service.objects.all()  
     return render(request, 'app/booking.html', {'therapists': therapists, 'services': services})
 
 def confirm_booking(request):
@@ -146,7 +146,7 @@ def process_payment(request):
             )
 
             messages.success(request, f"Payment processed successfully for your appointment with {appointment.therapist.name}.")
-            return redirect('appointments_list')  # Redirect to the list of appointments (or another page)
+            return redirect('appointments_list')  
         else:
             messages.error(request, "Payment processing failed.")
             return redirect('payment')
@@ -157,7 +157,7 @@ def process_payment(request):
 
 def manage_all_view(request):
     if request.method == 'POST':
-        action = request.POST.get('action')  # Get the action to determine which form was submitted
+        action = request.POST.get('action')  
 
         if action == 'therapist':
             form = TherapistForm(request.POST, request.FILES, prefix='therapist')
